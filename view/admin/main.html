@@ -1,0 +1,61 @@
+<main class="container-fluid image">
+    <div class="row">
+        <div class="col-md-4 reg">
+            <div class="wrapper start admin">
+                <h4>Администратор</h4>
+                <button type="button" class="btn btn-primary mb-2" id="all_users">Список пользователей</button>
+                <button type="button" class="btn btn-primary mb-2" id="all_debters">Список должников</button>
+                <br><br>
+                <form method="post" action="index.php?route=admin/delete_user" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="user" class="sr-only">Удалить пользователя</label>
+                        <input type="text" class="form-control" id="user" name="user" placeholder="Пользователь">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Удалить</button>
+                </form>
+                <br>
+                <form method="post" action="index.php?route=admin/delete_debter" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="debter" class="sr-only">Удалить должника</label>
+                        <input type="text" class="form-control" id="debter" name="debter" placeholder="Должник">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Удалить</button>
+                </form>
+                <br>
+                <form method="post" action="index.php?route=admin/bann" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="banned" class="sr-only">Запретить доступ</label>
+                        <input type="text" class="form-control" id="banned" name="banned"
+                               placeholder="Пользователь">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Запретить доступ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 all_users" id="content">
+        </div>
+    </div>
+    <? if(isset($answer)):?>
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Предупреждение</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><?= $answer?></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script defer> $('#myModal').modal('show');</script>
+    <?endif?>
+</main>

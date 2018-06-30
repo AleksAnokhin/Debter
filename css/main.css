@@ -1,0 +1,254 @@
+/* INDEX */
+
+.image {
+    background-image: url(../img/businessman-3213659_1920.jpg);
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    overflow: auto;
+    min-height: 650px;
+}
+
+.footer {
+    background-color: black;
+    min-height: 50px;
+    color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: .9em;
+    margin-top: 15px;
+}
+
+.footer p {
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.footer span {
+    color: #004f8a;
+}
+
+.footer span:hover {
+    color: white;
+}
+
+/*лэйбл*/
+.label {
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 20px;
+    float: right;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    width: 200px;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.label:hover {
+    background-color: white;
+    color: black;
+}
+
+.slogan {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.descriptor {
+    font-size: 0.8em;
+}
+
+.auth {
+    border-radius: 5px;
+    margin-top: 80px;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+.custom_btn {
+    background-color: black;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.custom_btn:hover {
+    background-color: #004f8a;
+    color: white;
+}
+
+a.custom_btn:first-of-type {
+    margin-bottom: 10px;
+}
+
+.btn_down {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.invitation {
+    color: black;
+    overflow: auto;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.invitation:hover {
+    background-color: black;
+    color: white;
+}
+
+.invitation h3 {
+    font-weight: bold;
+    margin: 0px;
+}
+
+.bg {
+    background-color: black;
+}
+
+/* REG */
+
+.wrapper {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 20px;
+
+}
+
+.reg {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+/* START */
+.start {
+    text-align: center;
+}
+
+/*QUESTION*/
+
+.ask {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    position: fixed;
+    display: none;
+    opacity: 0;
+}
+
+/* WORK */
+
+.poster {
+    color: black;
+    background-color: white;
+    opacity: 0.5;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form_style {
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.form_style button {
+    margin-top: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.question {
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.notice {
+    color: red;
+    font-size: .7em;
+}
+
+/*LOADER */
+
+.loading {
+    background-color: white;
+    text-align: center;
+    opacity: 0.7;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.loader {
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.customize {
+    color: white;
+}
+
+.customize:hover {
+    color: lightgray;
+}
+
+/* ADMIN */
+.admin {
+    margin-top: 40px;
+    border: 2px solid white;
+}
+.all_users {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.admin_zero {
+    background-color: black;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .label {
+        display: none;
+    }
+
+    .btn_down {
+        visibility: hidden;
+    }
+
+}

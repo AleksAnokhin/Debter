@@ -1,0 +1,61 @@
+<main class="container-fluid image">
+  <div class="row">
+    <div class="col-md-6 reg">
+      <div class="poster">
+        <h3>Тип должника</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 reg">
+      <form action="index.php?route=work/params/show" method='post'>
+        <div class="form_style">
+          <p class="question center">Укажите тип должника и наименование</p>
+			 <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Наименование</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="title" id="title" placeholder="Введите название организации/ФИО должника">
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0"></legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio_gridRadios" id="ind" value="individual" checked>
+                  <label class="form-check-label" for="ind"> Физическое лицо </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio_gridRadios" id="ent" value="entity">
+                  <label class="form-check-label" for="ent"> Юридическое лицо </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button type='submit' class="btn btn-primary">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <? if(isset($answer)):?>
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Предупреждение</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <?= $answer?>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer> $('#myModal').modal('show');</script>
+  <?endif?>
+</main>

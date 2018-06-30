@@ -1,0 +1,85 @@
+<main class="container-fluid image">
+  <div class="row">
+    <div class="col-md-6 reg">
+      <div class="poster">
+        <h3>Cудебная стадия - оценка процесса</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 reg">
+      <form action="index.php?route=work/router/proceedfirst" method="post">
+        <div class="form_style">
+          <p class="question center">Перспективы получения исполнительных документов по должникам и поручителям</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_perspective" id="perspective_low" value="low" checked>
+            <label class="form-check-label" for="perspective_low"> Низкие </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_perspective" id="perspective_middle" value="middle">
+            <label class="form-check-label" for="perspective_middle"> Средние </label>
+          </div>
+			<div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_perspective" id="perspective_high" value="high">
+            <label class="form-check-label" for="perspective_high"> Высокие </label>
+          </div>
+			<br>
+			 <p class="question center">Расчетное время до получения исполнительных документов по должникам</p>
+			 <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_time" id="less_three" value="3" checked>
+            <label class="form-check-label" for="less_three"> Менее 3х месяцев </label>
+          </div>
+			 <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_time" id="less_six" value="6">
+            <label class="form-check-label" for="less_six"> До 6 месяцев месяцев </label>
+          </div>
+			<div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_time" id="less_year" value="12">
+            <label class="form-check-label" for="less_year"> До 1 года </label>
+          </div>
+          <br>
+			<p class="question center">Обращено ли в рамках судебного процесса взыскание на заложенное имущество</p>
+			 <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_pledged" id="pledged_yes" value="yes" checked>
+            <label class="form-check-label" for="pledged_yes"> Да </label>
+          </div>
+			 <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_pledged" id="pledged_no" value="no">
+            <label class="form-check-label" for="pledged_no"> Нет </label>
+          </div>
+			<br>
+			<p class="question center">Введите стоимость иного выявленного имущества должника <span class="notice">(если нет укажите 0)</span></p>
+          <div class="form-group row">
+            <label for="elseproperty" class="col-sm-2 col-form-label">Стоимость</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="number_elseproperty" id="elseproperty">
+            </div>
+          </div>
+			<br>
+          <button type="submit" class="btn btn-primary">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <? if(isset($answer)):?>
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Предупреждение</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <?= $answer?>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer> $('#myModal').modal('show');</script>
+  <?endif?>
+</main>

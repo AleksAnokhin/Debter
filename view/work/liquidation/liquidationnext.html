@@ -1,0 +1,74 @@
+<main class="container-fluid image">
+  <div class="row">
+    <div class="col-md-6 reg">
+      <div class="poster">
+        <h3>Стадия ликвидации - параметры задолженности</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 reg">
+      <form action="index.php?route=work/router/proceedsecond" method="post">
+        <div class="form_style">
+          <p class="question center">Введите общий объем включенных требований в ликвидационный баланс</p>
+          <div class="form-group row">
+            <label for="total_summ" class="col-sm-2 col-form-label">Общий объем требований</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="number_total" id="total_summ">
+            </div>
+          </div><br>
+			<p class="question center">Введите расчетную сумму удовлетворения требований с учетом заявленных требований 
+			других кредиторов и выявленного имущества должника</p>
+          <div class="form-group row">
+            <label for="real_summ" class="col-sm-2 col-form-label">Расчетная сумма удовлетворения</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="number_real" id="real_summ">
+            </div>
+          </div><br>
+			 <p class="question center">Введите срок удовлетворения требований в рамках процедуры ликивдации</p>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Срок</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio_term" id="term_3" value="3"  checked>
+                  <label class="form-check-label" for="term_3"> До 3х месяцев </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio_term" id="term_6" value="6">
+                  <label class="form-check-label" for="term_6"> До 6 месяцев </label>
+                </div>
+				  <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio_term" id="term_12" value="12">
+                  <label class="form-check-label" for="term_12"> До 1 года </label>
+                </div>
+              </div>
+            </div>
+          </fieldset><br>
+          <button type='submit' class="btn btn-primary">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <? if(isset($answer)):?>
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Предупреждение</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <?= $answer?>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer> $('#myModal').modal('show');</script>
+  <?endif?>
+</main>

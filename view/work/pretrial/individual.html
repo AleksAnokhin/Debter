@@ -1,0 +1,64 @@
+<main class="container-fluid image">
+  <div class="row">
+    <div class="col-md-6 reg">
+      <div class="poster">
+        <h3>Досудебная стадия - должник - физическое лицо</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 reg">
+      <form action="index.php?route=work/router/proceedfirst" method='post'>
+        <div class="form_style">
+          <p class="question center">Укажите, установлен ли контакт с должником</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_contact" id="yes_contact" value="yes" checked>
+            <label class="form-check-label" for="yes_contact"> Контакт установлен </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_contact" id="no_contact" value="no">
+            <label class="form-check-label" for="no_contact"> Контакт не установлен </label>
+          </div><br>
+			 <p class="question center">Укажите, eсть ли у должника заложенное имущество</p>
+			 <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_property" id="yes_property" value="yes" checked>
+            <label class="form-check-label" for="yes_property"> Да </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_property" id="no_property" value="no">
+            <label class="form-check-label" for="no_property"> Нет </label>
+          </div><br>
+			<p class="question center">Введите стоимость иного выявленного имущества должника <span class="notice">(если нет укажите 0)</span></p>
+          <div class="form-group row">
+            <label for="elseproperty" class="col-sm-2 col-form-label">Стоимость</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="number_elseproperty" id="elseproperty">
+            </div>
+          </div>
+          <button type='submit' class="btn btn-primary">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <? if(isset($answer)):?>
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Предупреждение</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <?= $answer?>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer> $('#myModal').modal('show');</script>
+  <?endif?>
+</main>

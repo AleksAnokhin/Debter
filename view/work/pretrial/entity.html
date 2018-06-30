@@ -1,0 +1,59 @@
+<main class="container-fluid image">
+  <div class="row">
+    <div class="col-md-6 reg">
+      <div class="poster">
+        <h3>Досудебная стадия - должник - юридическое лицо</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 reg">
+      <form action="index.php?route=work/router/proceedfirst" method='post'>
+        <div class="form_style">
+          <p class="question center">Производился ли финасовый анализ за последние 6 месяцев?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_finance" id="yes_finance" value="yes" checked>
+            <label class="form-check-label" for="yes_finance"> Анализ производился </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_finance" id="no_finance" value="no">
+            <label class="form-check-label" for="no_finance"> Анализ не производился </label>
+          </div><br>
+			
+			<p class="question center">Установлен ли контакт с должником?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_contact" id="yes_contact" value="yes" checked>
+            <label class="form-check-label" for="yes_contact"> Да </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio_contact" id="no_contact" value="no">
+            <label class="form-check-label" for="no_contact"> Нет </label>
+          </div><br>
+			 
+          <button type='submit' class="btn btn-primary">Далее</button>
+        </div>
+      </form>
+    </div>
+  </div>
+	<? if(isset($answer)):?>
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Предупреждение</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <?= $answer?>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer> $('#myModal').modal('show');</script>
+  <?endif?>
+</main>
